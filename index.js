@@ -89,7 +89,6 @@ module.exports = {
   keystone,
   apps: [
     new GraphQLApp(),
-    new StaticApp({ path: '/', src: 'public' }),
     // To create an initial user you can temporarily remove the authStrategy below
     new AdminUIApp({ enableDefaultRoute: true, authStrategy }),
   ],
