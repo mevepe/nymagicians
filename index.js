@@ -3,7 +3,7 @@ const { PasswordAuthStrategy } = require('@keystonejs/auth-password');
 const { Text, Checkbox, Password, Unsplash } = require('@keystonejs/fields');
 const { GraphQLApp } = require('@keystonejs/app-graphql');
 const { AdminUIApp } = require('@keystonejs/app-admin-ui');
-const { StaticApp } = require('@keystonejs/app-static');
+const { NextApp } = require('@keystonejs/app-next');
 const { MongooseAdapter: Adapter } = require('@keystonejs/adapter-mongoose');
 
 const PROJECT_NAME = "neverwantedtonode";
@@ -91,5 +91,6 @@ module.exports = {
     new GraphQLApp(),
     // To create an initial user you can temporarily remove the authStrategy below
     new AdminUIApp({ enableDefaultRoute: true, authStrategy }),
+    new NextApp({ dir: 'app' }),
   ],
 };
