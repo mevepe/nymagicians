@@ -4,7 +4,7 @@ import { withRouter } from 'next/router'
 const Header = ({ router: { pathname } }) => (
   <header>
     <Link href='/'>
-      <a className={pathname === '/' ? 'is-active' : ''}>Home</a>
+      <a className={pathname === '/' ? 'is-active' : ''}>Главная</a>
     </Link>
     <Link href='/client-only'>
       <a className={pathname === '/client-only' ? 'is-active' : ''}>
@@ -14,19 +14,10 @@ const Header = ({ router: { pathname } }) => (
     <Link href='/about'>
       <a className={pathname === '/about' ? 'is-active' : ''}>About</a>
     </Link>
-    <style jsx>{`
-      header {
-        margin-bottom: 25px;
-      }
-      a {
-        font-size: 14px;
-        margin-right: 15px;
-        text-decoration: none;
-      }
-      .is-active {
-        text-decoration: underline;
-      }
-    `}</style>
+    <Link href='/contacts'>
+      <a className={pathname === '/about' ? 'is-active' : ''}>Контакты</a>
+    </Link>
+    <div className="example">Hello World!</div>
   </header>
 )
 

@@ -57,6 +57,15 @@ const authStrategy = keystone.createAuthStrategy({
   list: 'User',
 });
 
+keystone.createList('NavigationElement', {
+  schemaDoc: 'Navigation menu elements',
+  fields: {
+    title: { type: Text },
+    url: { type: Text },
+    index: { type: Integer, isUnique: true },
+  },
+});
+
 keystone.createList('Todo', {
   schemaDoc: 'A list of things which need to be done',
   fields: {

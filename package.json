@@ -14,6 +14,8 @@
     "start": "cross-env NODE_ENV=production keystone start"
   },
   "dependencies": {
+    "@apollo/react-hooks": "3.0.0",
+    "@apollo/react-ssr": "3.0.0",
     "@keystonejs/adapter-mongoose": "^5.0.0",
     "@keystonejs/app-admin-ui": "^5.0.0",
     "@keystonejs/app-graphql": "^5.0.0",
@@ -21,8 +23,7 @@
     "@keystonejs/auth-password": "^5.0.0",
     "@keystonejs/fields": "^5.0.0",
     "@keystonejs/keystone": "^5.0.0",
-    "@apollo/react-hooks": "3.0.0",
-    "@apollo/react-ssr": "3.0.0",
+    "@zeit/next-sass": "^1.0.1",
     "apollo-cache-inmemory": "1.6.3",
     "apollo-client": "2.6.4",
     "apollo-link-http": "1.5.15",
@@ -30,6 +31,7 @@
     "graphql-tag": "2.10.1",
     "isomorphic-unfetch": "^3.0.0",
     "next": "latest",
+    "node-sass": "^4.13.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
