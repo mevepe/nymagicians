@@ -1,210 +1,104 @@
-node_modules
-app/.next/build-manifest.json
-app/.next/react-loadable-manifest.json
-app/.next/cache/autodll-webpack-plugin/package.json.hash
-app/.next/cache/autodll-webpack-plugin/development_instance_0_efd79f22da9d4824e2f106ba5d0562a0/dll_bc37a865107687052c11.js
-app/.next/cache/autodll-webpack-plugin/development_instance_0_efd79f22da9d4824e2f106ba5d0562a0/dll_bc37a865107687052c11.js.map
-app/.next/cache/autodll-webpack-plugin/development_instance_0_efd79f22da9d4824e2f106ba5d0562a0/dll.manifest.json
-app/.next/cache/autodll-webpack-plugin/development_instance_0_efd79f22da9d4824e2f106ba5d0562a0/stats.json
-app/.next/cache/next-babel-loader/0d9f356b4a3c1b511e7d28fa9ad3ede6.json
-app/.next/cache/next-babel-loader/1ca3dfee28c5b03b489353a4ce302133.json
-app/.next/cache/next-babel-loader/2ebe620324b56251c9dc2c0b8eb0be39.json
-app/.next/cache/next-babel-loader/2ef1915183b34ec38c03fe9941c5e88e.json
-app/.next/cache/next-babel-loader/03ad6c5ee0d2d97c7ae8fe169a22f289.json
-app/.next/cache/next-babel-loader/3f9a242eb55067953c465eccc48c4710.json
-app/.next/cache/next-babel-loader/3fc452fbebce3f97654bf486df9b5e73.json
-app/.next/cache/next-babel-loader/4c2d7e9ac330d62f1d552e25ad0ab2a6.json
-app/.next/cache/next-babel-loader/4d6a1c68d1ea72382056b52349f95cdc.json
-app/.next/cache/next-babel-loader/4f58fb3dbb94f1f3d826e8b8ce7ee0db.json
-app/.next/cache/next-babel-loader/5bcab048e6414eb61939e83c809ac15e.json
-app/.next/cache/next-babel-loader/6f8c7e1756e9ae618ad60a5a52ec07d1.json
-app/.next/cache/next-babel-loader/7a39921002890f162fc36c7630470207.json
-app/.next/cache/next-babel-loader/7c4b88ad839e8fa581210168f1c06545.json
-app/.next/cache/next-babel-loader/30dc60def0faf53cea42b5e892986761.json
-app/.next/cache/next-babel-loader/61fe4ddb800471637104e547e745d752.json
-app/.next/cache/next-babel-loader/0079ab763cc10b395806fc7c25cc74f8.json
-app/.next/cache/next-babel-loader/85af7cb74686900877aff0c60f03032d.json
-app/.next/cache/next-babel-loader/93c1602c4235b08713c9d3f0f5af5175.json
-app/.next/cache/next-babel-loader/181d98116979a028ba95f71fe9ff7e43.json
-app/.next/cache/next-babel-loader/191bea9b50b86808d791e66f804a77fc.json
-app/.next/cache/next-babel-loader/314e38f0b8d00eae79948749f1eb0494.json
-app/.next/cache/next-babel-loader/504bfcbbff08a9fddb8dfa5d9484b844.json
-app/.next/cache/next-babel-loader/579bb894d15d673c58f3438bfa300598.json
-app/.next/cache/next-babel-loader/783b72ff5cb6c5accb527bd3f621fc8f.json
-app/.next/cache/next-babel-loader/794a65ad4721e97759fc43c2c9f85e6d.json
-app/.next/cache/next-babel-loader/01911b84a1dd1651bde49e327c15411f.json
-app/.next/cache/next-babel-loader/3527eb451e7cb19a0143816e38bd7d29.json
-app/.next/cache/next-babel-loader/6102ad5caf8c47a2ddf22e0d118fbeac.json
-app/.next/cache/next-babel-loader/6509f96c8df4edd7208c3b2db1ae09a1.json
-app/.next/cache/next-babel-loader/557249b6df7c9b35df9567cbd51e4d87.json
-app/.next/cache/next-babel-loader/906125e57394688dc449843bea2490a4.json
-app/.next/cache/next-babel-loader/07013477c13aada79665d955b6cf0c73.json
-app/.next/cache/next-babel-loader/2704207137c98013623dd07963c3d4ee.json
-app/.next/cache/next-babel-loader/4824171077f81f4b966921478c8881a0.json
-app/.next/cache/next-babel-loader/a0cd8dcfc5021b35787f232f88e3e31b.json
-app/.next/cache/next-babel-loader/b1a0ba25ff5d58abf0122a59c6910286.json
-app/.next/cache/next-babel-loader/b31ae2661860472188511a60d3003156.json
-app/.next/cache/next-babel-loader/b49f44b2279861114e053943cd1a3cee.json
-app/.next/cache/next-babel-loader/b59d559972afae1194f8d43fd19bea72.json
-app/.next/cache/next-babel-loader/b3611a13662910a4e3f0c003f4d8b95f.json
-app/.next/cache/next-babel-loader/bbe5a0366ae83d22caccff9ce09128d7.json
-app/.next/cache/next-babel-loader/ccac580d249cd300b3cc4e0733668788.json
-app/.next/cache/next-babel-loader/cd51ea821b63c4d9dad0998660c54855.json
-app/.next/cache/next-babel-loader/cddb37e2aa8e4b927c225d130f25190b.json
-app/.next/cache/next-babel-loader/d16230db7bf2cf22800859f5590060a5.json
-app/.next/cache/next-babel-loader/da02631b08cf50432895d3dc74983572.json
-app/.next/cache/next-babel-loader/dfbedfa996af56f395e9ef0f7764566a.json
-app/.next/cache/next-babel-loader/e9ddcbddcf76c264be8ea50968d62285.json
-app/.next/cache/next-babel-loader/e06639a65bcbc87177e923166c7f1adc.json
-app/.next/cache/next-babel-loader/ea2abd0834e78ea3260b7e6f416d7371.json
-app/.next/cache/next-babel-loader/eba7be99f34904ea19a3aeb5f6f52539.json
-app/.next/cache/next-babel-loader/f932e7b1ab27dc13d149a605774595ab.json
-app/.next/cache/next-babel-loader/f3925f947e66e7c85cc399e45ee64cc5.json
-app/.next/cache/next-babel-loader/f05251451891112ebfb4f16fbf939e67.json
-app/.next/cache/next-babel-loader/fad2463a08ba4d0edc35ebdc7003641b.json
-app/.next/cache/next-babel-loader/ffdc4423a3ed542068535f429e33b869.json
-app/.next/server/pages-manifest.json
-app/.next/server/ssr-module-cache.js
-app/.next/server/static/development/pages/_app.js
-app/.next/server/static/development/pages/_app.js.map
-app/.next/server/static/development/pages/_document.js
-app/.next/server/static/development/pages/_document.js.map
-app/.next/server/static/development/pages/_error.js
-app/.next/server/static/development/pages/_error.js.map
-app/.next/server/static/development/pages/next/dist/pages/_error.js.map
-app/.next/static/chunks/0.js
-app/.next/static/chunks/0.js.map
-app/.next/static/development/dll/dll_bc37a865107687052c11.js
-app/.next/static/development/dll/dll_bc37a865107687052c11.js.map
-app/.next/static/development/pages/_app.js
-app/.next/static/development/pages/_app.js.map
-app/.next/static/development/pages/_error.js
-app/.next/static/development/pages/_error.js.map
-app/.next/static/development/pages/next/dist/pages/_error.js.map
-app/.next/static/runtime/amp.js
-app/.next/static/runtime/amp.js.map
-app/.next/static/runtime/main.js
-app/.next/static/runtime/main.js.map
-app/.next/static/runtime/webpack.js
-app/.next/static/runtime/webpack.js.map
-app/.next/static/webpack/65b4702156046ffe8c85.hot-update.json
-app/.next/static/webpack/7887ca08cbdd0e74b66b.hot-update.json
-.next/build-manifest.json
-.next/react-loadable-manifest.json
-.next/cache/autodll-webpack-plugin/package.json.hash
-.next/cache/autodll-webpack-plugin/development_instance_0_429239ce5192d46f6f7c95e032f25392/dll_01ec57fc9b90d43b98a8.js
-.next/cache/autodll-webpack-plugin/development_instance_0_429239ce5192d46f6f7c95e032f25392/dll_01ec57fc9b90d43b98a8.js.map
-.next/cache/autodll-webpack-plugin/development_instance_0_429239ce5192d46f6f7c95e032f25392/dll.manifest.json
-.next/cache/autodll-webpack-plugin/development_instance_0_429239ce5192d46f6f7c95e032f25392/stats.json
-.next/cache/next-babel-loader/0a4e8da10fb9a24d2ba63e05112123b7.json
-.next/cache/next-babel-loader/0d1d38cf7a75629686a69b53aa6dfc38.json
-.next/cache/next-babel-loader/0ea0ad559dd1af32d245c1328c8b8de8.json
-.next/cache/next-babel-loader/1ac7e942a85b13e4b79faac3738e6018.json
-.next/cache/next-babel-loader/1de571b6ab35496fa2a6204eadda6c82.json
-.next/cache/next-babel-loader/2af4561d9b956400268859b5097ef731.json
-.next/cache/next-babel-loader/3bcc24c414f358905a90c58157ba985b.json
-.next/cache/next-babel-loader/3c27f2bd8c605d0689fbbf49820b0cae.json
-.next/cache/next-babel-loader/4abe3dd826b0c682e63de27753973310.json
-.next/cache/next-babel-loader/4b537548e56dd38e6e1848cce9c78f77.json
-.next/cache/next-babel-loader/6b8d5178966187c7fdb58dda3ff22aa7.json
-.next/cache/next-babel-loader/6dfb3a506cc70f3c304a5369aabd3852.json
-.next/cache/next-babel-loader/7d631e2539c10102be8e9946587a92a5.json
-.next/cache/next-babel-loader/8aeef9a731c2395b9d0e013be640cf62.json
-.next/cache/next-babel-loader/8d1af07c9bb552a15d151f89aa3df2eb.json
-.next/cache/next-babel-loader/9a2523dfe1d144d1e64bc658e81986b2.json
-.next/cache/next-babel-loader/9c292e15214834c6c2b9c3d4e9084671.json
-.next/cache/next-babel-loader/9d9930d1d7172868d806df751b03bca9.json
-.next/cache/next-babel-loader/15ef6b613b364e7d3f90ee2cd6bc4c66.json
-.next/cache/next-babel-loader/27d6d29ee49a711c3049f50875c4d7a9.json
-.next/cache/next-babel-loader/28deedd5f1d59d7491622b4e6c974e72.json
-.next/cache/next-babel-loader/33a3211045d07b8f21adb17f0b5988de.json
-.next/cache/next-babel-loader/34fbd553bececf3035dbd14af1b052ee.json
-.next/cache/next-babel-loader/37bf16ad67e7d18e26850ca095f480d3.json
-.next/cache/next-babel-loader/42d1b3aa5f4740cde2c0fadd04fa07db.json
-.next/cache/next-babel-loader/58fdf3f367be97eb3d8e7c3d4f40f068.json
-.next/cache/next-babel-loader/69e93800f204fb994b1da8ddb5528862.json
-.next/cache/next-babel-loader/78cdc475689e75758c1f8f6cfc430771.json
-.next/cache/next-babel-loader/94d92de411c2c5cf60c3b669878d9086.json
-.next/cache/next-babel-loader/97a62055671f5333688e6bcc773943be.json
-.next/cache/next-babel-loader/460c72a59945998a3fcbb17e96c76cfe.json
-.next/cache/next-babel-loader/472dabf3706577607d254685eca93669.json
-.next/cache/next-babel-loader/763e945389531f6b5af21cb574f7ec44.json
-.next/cache/next-babel-loader/952fa594d833086902c3a41937d6d5e4.json
-.next/cache/next-babel-loader/2852f60aa4f77c7fd9778735b2134036.json
-.next/cache/next-babel-loader/4594fa5b91a1303f863ac2dfaa9451bd.json
-.next/cache/next-babel-loader/8816a95c9aa0d98d31f2be2e60d22dea.json
-.next/cache/next-babel-loader/30320f4cf2765a9200c9f23ee6f37fd5.json
-.next/cache/next-babel-loader/574579c3b847254c538c7168457400a1.json
-.next/cache/next-babel-loader/887780d0336541b025f193bc76ada47a.json
-.next/cache/next-babel-loader/1028373742c80b39663f051b644dd796.json
-.next/cache/next-babel-loader/8212752806d7895897f90c7f1a56ad8e.json
-.next/cache/next-babel-loader/69659390855125782354ed35b3199824.json
-.next/cache/next-babel-loader/a57eb2ffaa3d4c75d27aff5bc1ca387f.json
-.next/cache/next-babel-loader/a81465d74ffcdc79dca7968235d86a88.json
-.next/cache/next-babel-loader/ab20b30fbd13616451c85acee4203c19.json
-.next/cache/next-babel-loader/ac30af603f0c000d7544652e6c73fb4f.json
-.next/cache/next-babel-loader/ac204d2e6c6bd4db55780dba2c197bac.json
-.next/cache/next-babel-loader/acbb68f18d75a8e34ab6b591ad34971c.json
-.next/cache/next-babel-loader/af92e98f9e8641b8cbd9709dfa866761.json
-.next/cache/next-babel-loader/b36a26233f12c5d5a533fe54419bc34e.json
-.next/cache/next-babel-loader/ba52758b5e80ac2815bc95907ce82efe.json
-.next/cache/next-babel-loader/c462e68bdff8f7a6e901f131c6a6a156.json
-.next/cache/next-babel-loader/ca08e5701215544e7faeb5dd70ed4806.json
-.next/cache/next-babel-loader/cbfdfb7e2a8fa4b64f3bca5d59fe6ea6.json
-.next/cache/next-babel-loader/d9eec512d576bacda655a5a0d0dc9db6.json
-.next/cache/next-babel-loader/d82c7e4655abde81e00ecffe61b46f7d.json
-.next/cache/next-babel-loader/d39768b9d127f064018ea70f41f4826e.json
-.next/cache/next-babel-loader/dde964c390bc39fa11134d0c65ce0ee2.json
-.next/cache/next-babel-loader/dffa48bc5810d5092d769b690015d400.json
-.next/cache/next-babel-loader/e82d2b5b0188620f1a03f092755c31e6.json
-.next/cache/next-babel-loader/e7610bb43ab6e87f98928a5cf391f0b9.json
-.next/cache/next-babel-loader/e7976e03b112b99f07d4e0c65c523212.json
-.next/cache/next-babel-loader/e92818050bfa7ff331e5d77c235d577c.json
-.next/cache/next-babel-loader/ed4368ab800aa8d4454c34a71950eeb1.json
-.next/cache/next-babel-loader/ed6640d90d47684affa8e4bff013c964.json
-.next/cache/next-babel-loader/f166d4e0df957b8ccd62412bbdbb70a8.json
-.next/cache/next-babel-loader/fba067fc9377dad8a35f9b066c13c502.json
-.next/cache/next-babel-loader/fe19e7f0c9c5994e5458fbb0ceb962f0.json
-.next/server/pages-manifest.json
-.next/server/ssr-module-cache.js
-.next/server/static/development/pages/_app.js
-.next/server/static/development/pages/_app.js.map
-.next/server/static/development/pages/_document.js
-.next/server/static/development/pages/_document.js.map
-.next/server/static/development/pages/_error.js
-.next/server/static/development/pages/_error.js.map
-.next/server/static/development/pages/about.js.map
-.next/server/static/development/pages/index.js.map
-.next/server/static/development/pages/next/dist/pages/_error.js
-.next/server/static/development/pages/next/dist/pages/_error.js.map
-.next/server/static/development/pages/p/[id].js.map
-.next/static/chunks/0.js.map
-.next/static/development/dll/dll_01ec57fc9b90d43b98a8.js
-.next/static/development/dll/dll_01ec57fc9b90d43b98a8.js.map
-.next/static/development/pages/_app.js.map
-.next/static/development/pages/_error.js.map
-.next/static/development/pages/about.js.map
-.next/static/development/pages/index.js.map
-.next/static/development/pages/next/dist/pages/_error.js.map
-.next/static/development/pages/p/[id].js.map
-.next/static/runtime/amp.js.map
-.next/static/runtime/main.js.map
-.next/static/runtime/webpack.js.map
-.next/static/webpack/00a7a1f76a2d946da41b.hot-update.json
-.next/static/webpack/2a0a79e482cd8e5e2dda.hot-update.json
-.next/static/webpack/4a39a6431f41ef7e7c13.hot-update.json
-.next/static/webpack/9c671fca4fec46ea33fd.hot-update.json
-.next/static/webpack/54a5f0a3ef2f617e5317.hot-update.json
-.next/static/webpack/62d7eda10f0cb5ff042e.hot-update.json
-.next/static/webpack/69dcc28169ca2cd98c70.hot-update.json
-.next/static/webpack/087e7791bcca5ef830e1.hot-update.json
-.next/static/webpack/975f9ee05908cb6f42fd.hot-update.json
-.next/static/webpack/1090e52a8a720aa9c896.hot-update.json
-.next/static/webpack/8987f4555f38c4a45a3c.hot-update.json
-.next/static/webpack/a831b4300407fd50a194.hot-update.json
-.next/static/webpack/a8175170444e25e77016.hot-update.json
-.next/static/webpack/b625a636f836d83a7593.hot-update.json
-.next/static/webpack/d95cad0dbd9711fec965.hot-update.json
-.next/static/webpack/e9b64678b17bd6a2ef40.hot-update.json
-.next/static/webpack/f81e30675b9b217710da.hot-update.json
-.next/static/development/pages/next/dist/pages/_error.js
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for instrumented libs generated by jscoverage/JSCover
+lib-cov
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# TypeScript v1 declaration files
+typings/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.test
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+# Comment in the public line in if your project uses Gatsby and *not* Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# public
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port

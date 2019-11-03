@@ -1,23 +1,15 @@
-import Layout from '../components/MyLayout.js'
-import Link from 'next/link'
+import App from '../components/App'
+import InfoBox from '../components/InfoBox'
+import Header from '../components/Header'
+import Submit from '../components/Submit'
+import PostList from '../components/PostList'
+import { withApollo } from '../lib/apollo'
 
-const PostLink = props => (
-  <li>
-    <Link href="/p/[id]" as={`/p/${props.id}`}>
-      <a>{props.id}</a>
-    </Link>
-  </li>
+const IndexPage = props => (
+  <App>
+    <Header />
+    <PostList />
+  </App>
 )
 
-export default function Blog() {
-  return (
-    <Layout>
-      <h1>My Blog</h1>
-      <ul>
-        <PostLink id="hello-nextjs" />
-        <PostLink id="learn-nextjs" />
-        <PostLink id="deploy-nextjs" />
-      </ul>
-    </Layout>
-  )
-}
+export default withApollo(IndexPage)

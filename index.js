@@ -1,6 +1,6 @@
 const { Keystone } = require('@keystonejs/keystone');
 const { PasswordAuthStrategy } = require('@keystonejs/auth-password');
-const { Text, Checkbox, Password, Unsplash } = require('@keystonejs/fields');
+const { Text, Integer, Checkbox, Password, Unsplash, Relationship } = require('@keystonejs/fields');
 const { GraphQLApp } = require('@keystonejs/app-graphql');
 const { AdminUIApp } = require('@keystonejs/app-admin-ui');
 const { NextApp } = require('@keystonejs/app-next');
@@ -40,6 +40,7 @@ keystone.createList('User', {
     password: {
       type: Password,
     },
+    todolist: { type: Relationship, ref: 'Todo.createdBy', many: true },
   },
   // To create an initial user you can temporarily remove access controls
   access: {
@@ -60,19 +61,19 @@ keystone.createList('Todo', {
   schemaDoc: 'A list of things which need to be done',
   fields: {
     name: { type: Text, schemaDoc: 'This is the thing you need to do' },
+    createdBy: { type: Relationship, ref: 'User.todolist', many: true },
   },
 });
 
-/*
 keystone.createList('Post', {
+  schemaDoc: 'A list of things which need to be done',
   fields: {
-    body: {
-      type: Content,
-      blocks: [Content.blocks.blockquote, CloudinaryImage.blocks.image],
-    },
+    title: { type: Text },
+    votes: { type: Integer },
+    url: { type: Text },
+    createdAt: { type: Text },
   },
 });
-*/
 
 keystone.createList('UnsplashPicture', {
   fields: {
@@ -89,8 +90,7 @@ module.exports = {
   keystone,
   apps: [
     new GraphQLApp(),
+    new AdminUIApp({ enableDefaultRoute: false, authStrategy }),
     new NextApp({ dir: '.' }),
-    // To create an initial user you can temporarily remove the authStrategy below
-    new AdminUIApp({ enableDefaultRoute: true, authStrategy }),
   ],
 };
