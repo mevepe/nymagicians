@@ -1,55 +1,19 @@
 const { Keystone } = require('@keystonejs/keystone');
 const { PasswordAuthStrategy } = require('@keystonejs/auth-password');
-const { Text, Integer, Checkbox, Password, Unsplash, Relationship } = require('@keystonejs/fields');
 const { GraphQLApp } = require('@keystonejs/app-graphql');
 const { AdminUIApp } = require('@keystonejs/app-admin-ui');
 const { NextApp } = require('@keystonejs/app-next');
 const { MongooseAdapter: Adapter } = require('@keystonejs/adapter-mongoose');
 
-const PROJECT_NAME = "neverwantedtonode";
+const { staticRoute, staticPath, distDir } = require('./config.js');
+const { User, Product, StoreCategory, NavigationElement, HeroSection, HeroCard,
+  Todo, Post, UnsplashPicture, InfoCard} = require('./schema');
+
 const mongooseConnectionString = "mongodb+srv://mevepe:4a4a4a4a@heh-wckl0.gcp.mongodb.net/tryme?retryWrites=true&w=majority";
 
 const keystone = new Keystone({
-  name: PROJECT_NAME,
-  adapter: new Adapter({mongoUri: mongooseConnectionString}),
-});
-
-// Access control functions
-const userIsAdmin = ({ authentication: { item: user } }) => Boolean(user && user.isAdmin);
-const userOwnsItem = ({ authentication: { item: user } }) => {
-  if (!user) {
-    return false;
-  }
-  return { id: user.id };
-};
-const userIsAdminOrOwner = auth => {
-  const isAdmin = access.userIsAdmin(auth);
-  const isOwner = access.userOwnsItem(auth);
-  return isAdmin ? isAdmin : isOwner;
-};
-const access = { userIsAdmin, userOwnsItem, userIsAdminOrOwner };
-
-keystone.createList('User', {
-  fields: {
-    name: { type: Text },
-    email: {
-      type: Text,
-      isUnique: true,
-    },
-    isAdmin: { type: Checkbox },
-    password: {
-      type: Password,
-    },
-    todolist: { type: Relationship, ref: 'Todo.createdBy', many: true },
-  },
-  // To create an initial user you can temporarily remove access controls
-  access: {
-    read: access.userIsAdminOrOwner,
-    update: access.userIsAdminOrOwner,
-    create: access.userIsAdmin,
-    delete: access.userIsAdmin,
-    auth: true,
-  },
+  name: "neverwantedtonode",
+  adapter: new Adapter({ mongoUri: mongooseConnectionString }),
 });
 
 const authStrategy = keystone.createAuthStrategy({
@@ -57,49 +21,73 @@ const authStrategy = keystone.createAuthStrategy({
   list: 'User',
 });
 
-keystone.createList('NavigationElement', {
-  schemaDoc: 'Navigation menu elements',
-  fields: {
-    title: { type: Text },
-    url: { type: Text },
-    index: { type: Integer, isUnique: true },
-  },
-});
+keystone.createList('User', User);
+keystone.createList('Product', Product);
+keystone.createList('StoreCategory', StoreCategory);
+keystone.createList('NavigationElement', NavigationElement);
+keystone.createList('HeroSection', HeroSection);
+keystone.createList('HeroCard', HeroCard);
+keystone.createList('Todo', Todo);
+keystone.createList('Post', Post);
+keystone.createList('InfoCard', InfoCard);
+keystone.createList('UnsplashPicture', UnsplashPicture);
 
-keystone.createList('Todo', {
-  schemaDoc: 'A list of things which need to be done',
-  fields: {
-    name: { type: Text, schemaDoc: 'This is the thing you need to do' },
-    createdBy: { type: Relationship, ref: 'User.todolist', many: true },
-  },
-});
-
-keystone.createList('Post', {
-  schemaDoc: 'A list of things which need to be done',
-  fields: {
-    title: { type: Text },
-    votes: { type: Integer },
-    url: { type: Text },
-    createdAt: { type: Text },
-  },
-});
-
-keystone.createList('UnsplashPicture', {
-  fields: {
-    name: { type: Text },
-    heroImage: {
-      type: Unsplash,
-      accessKey: 'f6fb64192114b4ee48ecd9e04f13f24e211be28caac5ba575568d9aa0fc24b7a', // Get one from https://unsplash.com/developers
-      secretKey: '4211e03a69856ac94ea9b4e1c18dada71881df6542524aca7846b43a21903888',
+const adminApp = new AdminUIApp({
+  adminPath: '/admin',
+  authStrategy,
+  isAccessAllowed: ({ authentication: { item: user } }) => !!user && !!user.isAdmin,
+  pages: [
+    // {
+    //   label: 'A new dashboard',
+    //   path: '',
+    //   component: require.resolve('./admin/pages/dashboard'),
+    // },
+    {
+      label: 'About this project',
+      path: 'about',
+      component: require.resolve('./admin/pages/about'),
     },
-  },
+    {
+      label: 'Appearance',
+      children: [
+        { label: 'Menu', listKey: 'NavigationElement' },
+        { label: 'Hero Sections', listKey: 'HeroSection' },
+        { label: 'Hero Cards', listKey: 'HeroCard' },
+        //{ listKey: 'Comment' },
+      ],
+    },
+    {
+      label: 'Store',
+      children: [
+        { listKey: 'Product' },
+        { label: 'Categories', listKey: 'StoreCategory' },
+        //{ listKey: 'Comment' },
+      ],
+    },
+    {
+      label: 'People',
+      children: ['User'],
+    },
+  ],
 });
+
+// module.exports = {
+//   keystone,
+//   apps: [
+//     new GraphQLApp(),
+//     adminApp,
+//     new NextApp({ dir: 'app' }),
+//   ],
+//   distDir,
+// };
 
 module.exports = {
   keystone,
   apps: [
     new GraphQLApp(),
-    new AdminUIApp({ enableDefaultRoute: false, authStrategy }),
-    new NextApp({ dir: '.' }),
+    //new AdminUIApp({ enableDefaultRoute: false, authStrategy }),
+    adminApp,
+    new NextApp({ dir: 'app' }),
   ],
+  distDir,
 };
