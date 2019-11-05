@@ -1,4 +1,99 @@
-$font-size: 20px;
-.example {
-  font-size: $font-size;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+$mq-grid: 1364px;
+
+$foreground-color: rgba(#F12626, 1.0);
+$primary-color: rgba(#ffffff, 1.0);
+
+$open-sans-font: 'Open Sans', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+
+  text-decoration: none;
+}
+
+body {
+  font-family: $open-sans-font;
+}
+
+header {
+  position: fixed;
+  display: flex;
+}
+
+.primary-hero-section {
+  background-color: $foreground-color;
+  color: $primary-color;
+
+  height: 100vh;
+
+  .wrap {
+    max-width: $mq-grid;
+    margin: auto;
+
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    .layout-column {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 80px;
+    font-weight: 700;
+    max-width: 584px;
+    line-height: 109px;
+    margin-bottom: 30px;
+  }
+
+  &__intro-text {
+    font-size: 20px;
+    line-height: 27px;
+    margin-bottom: 30px;
+
+    position: relative;
+    padding-left: 15px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-left: 4px solid $primary-color;
+      height: 100%;
+      left: 0;
+      transform: scaleY(0.80);
+    }
+  }
+
+  &__image {
+    max-width: 429px;
+  }
+}
+
+.hero-button {
+  font-size: 20px;
+  line-height: 27px;
+  color: $primary-color;
+
+  border: 1px solid $primary-color;
+  border-radius: 7px;
+  padding: 23px 29px;
+
+  display: inline-block;
+
+  text-align: center;
+
+  align-self: baseline;
+
+  .ghost {
+
+  }
 }

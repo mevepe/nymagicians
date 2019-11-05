@@ -3,6 +3,7 @@ import { NetworkStatus } from 'apollo-client'
 import gql from 'graphql-tag'
 import ErrorMessage from './ErrorMessage'
 import { Html } from '../primitives/Html';
+import Button from '../primitives/Button';
 
 export const PRIMARY_HERO_SECTION_QUERY = gql`
 query primaryHeroSection {
@@ -11,6 +12,8 @@ query primaryHeroSection {
     title
     slug
     introText
+    buttonText
+    buttonLink
     image {
       filename
       publicUrl
@@ -41,13 +44,19 @@ export default function PrimaryHeroSection() {
   const { allHeroSections } = data
 
   return (
-    <section>
+    <section className="primary-hero-section">
       {
         allHeroSections.map((section, index) => (
-        <div key={index} className="primary-hero-section-wrap">
-            <h2>{section.title}</h2>
-            <Html markup={section.introText} className="hero-card-body" />
-        </div>
+          <div key={index} className="wrap">
+            <div class="layout-column">
+              <h2 className="primary-hero-section__title">{section.title}</h2>
+              <Html markup={section.introText} className="primary-hero-section__intro-text" />
+              <Button buttonText={section.buttonText} buttonUrl={section.buttonLink} isGhost={true} />
+            </div>
+            <div className="layout-column">
+              <img src={section.image.publicUrl} className="primary-hero-section__image" />
+            </div>
+          </div>
         ))}
     </section>
   )

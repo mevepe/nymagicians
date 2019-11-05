@@ -1,13 +1,14 @@
-import { useQuery } from '@apollo/react-hooks'
-import { NetworkStatus } from 'apollo-client'
-import gql from 'graphql-tag'
-import ErrorMessage from './ErrorMessage'
-import { Html } from '../primitives/Html';
+import React from 'react'
+import { Html } from '../primitives/Html'
 
-export default function InfoCard() {
-
+export default function InfoCard ({ value, imageSrc, body }) {
   return (
-    <section>
-    </section>
+    <div className="info-card-wrap">
+      <img src={imageSrc} />
+      <div>
+        <h2 className="info-card__value">{value}</h2>
+        <Html markup={body} />
+      </div>
+    </div>
   )
 }

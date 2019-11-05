@@ -148,7 +148,7 @@ exports.HeroSection = {
         image: { type: File, adapter: fileAdapter },
         usingInfoCards: {
             type: Relationship,
-            ref: 'InfoCard.assignedTo',
+            ref: 'InfoCard',
             many: true,
         },
     },
@@ -189,6 +189,30 @@ exports.HeroCard = {
     labelResolver: item => item.title,
 };
 
+exports.InfoCardSection = {
+    schemaDoc: 'Data to display in info card section',
+    fields: {
+        title: { type: Text },
+        slug: { type: Slug, from: 'title' },
+        status: {
+            type: Select,
+            defaultValue: 'draft',
+            options: [{ label: 'Draft', value: 'draft' }, { label: 'Published', value: 'published' }],
+        },
+        usingInfoCards: {
+            type: Relationship,
+            ref: 'InfoCard',
+            many: true,
+        },
+    },
+    adminConfig: {
+        defaultPageSize: 20,
+        defaultColumns: 'title, status',
+        defaultSort: 'title',
+    },
+    labelResolver: item => item.title,
+};
+
 exports.InfoCard = {
     fields: {
         title: { type: Text },
@@ -196,11 +220,6 @@ exports.InfoCard = {
         value: { type: Text },
         body: { type: Wysiwyg },
         image: { type: File, adapter: fileAdapter },
-        assignedTo: {
-            type: Relationship,
-            ref: 'HeroSection.usingInfoCards',
-            many: true,
-        },
     },
     adminConfig: {
         defaultPageSize: 20,
