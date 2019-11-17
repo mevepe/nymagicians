@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import React, { useState } from 'react';
 import { withRouter } from 'next/router'
 import { useQuery } from '@apollo/react-hooks'
 import { NetworkStatus } from 'apollo-client'
@@ -19,7 +20,7 @@ export const ALL_NAV_ELEMENTS_QUERY = gql`
   }
 `
 
-export function Header ({ router: { pathname } }) {
+export function Header({ router: { pathname } }) {
   const { loading, error, data, fetchMore, networkStatus } = useQuery(
     ALL_NAV_ELEMENTS_QUERY,
     {
@@ -36,25 +37,27 @@ export function Header ({ router: { pathname } }) {
   const { allNavigationElements, _allNavigationElementsMeta } = data
 
   return (
-    <header>
-      <Link href="/">
-        <div>
-          <img src="/static/logo.png" alt="logo" />
-          <img src="/static/NYmagicians.png" alt="logo" />
-        </div>
-      </Link>
-      <nav>
-        {allNavigationElements.map((element, index) => (
-          <div key={index} className="nav-element">
-            <Link href={element.url}>
-              <a className={pathname === element.url ? 'is-active' : ''}>{element.title}</a>
-            </Link>
+    <header className="header">
+      <div className="wrap">
+        <Link href="/">
+          <div className="header__logo">
+            <img src="/static/logo.png" alt="logo" className="header__logo__element" />
+            <img src="/static/NYmagicians.png" alt="logo" className="header__logo__element" />
           </div>
-        ))}
-      </nav>
-      <Link href="/about">
-        <img src="/static/icons-1.png" alt="image" />
-      </Link>
+        </Link>
+        <nav className="header__main-navigation">
+          {allNavigationElements.map((element, index) => (
+            <div key={index} className="header__main-navigation__nav-element">
+              <Link href={element.url}>
+                <a className={pathname === element.url ? 'currently-active' : ''}>{element.title}</a>
+              </Link>
+            </div>
+          ))}
+          <Link href="/about">
+            <img src="/static/menu.png" alt="image" className="header__main-navigation__menu-button" />
+          </Link>
+        </nav>
+      </div>
     </header>
   )
 }

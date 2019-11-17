@@ -37,14 +37,16 @@ export default function HeroCards() {
   const { allHeroCards, _allPostsMeta } = data
 
   return (
-    <section>
-      {allHeroCards.map((card, index) => (
-        <div key={index} className="hero-card-wrap">
-          <img src={card.image.publicUrl} className="hero-card__image" />
-          <h2 className="hero-card__title">{card.title}</h2>
-          <Html markup={card.body} className="hero-card-body" />
-        </div>
-      ))}
+    <section className="hero-cards-section">
+      <div className="wrap">
+        {allHeroCards.map((card, index) => (
+          <div key={index} className="hero-card-wrap">
+            <img src={card.image.publicUrl} className="hero-card__image" />
+            <h2 className="hero-card__title">{card.title}</h2>
+            <Html markup={card.body} className="hero-card-body" />
+          </div>
+        ))}
+      </div>
     </section>
   )
 }

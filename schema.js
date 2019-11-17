@@ -112,6 +112,7 @@ exports.StoreCategory = {
         name: { type: Text },
         slug: { type: Slug, from: 'name' },
     },
+    labelResolver: item => item.name,
 };
 
 exports.NavigationElement = {
@@ -121,6 +122,17 @@ exports.NavigationElement = {
         url: { type: Text },
         index: { type: Integer, isUnique: true },
     },
+    labelResolver: item => item.title,
+};
+
+exports.SocialElement = {
+    schemaDoc: 'Navigation menu elements',
+    fields: {
+        title: { type: Text },
+        url: { type: Text },
+        image: { type: File, adapter: fileAdapter },
+    },
+    labelResolver: item => item.title,
 };
 
 exports.HeroSection = {
@@ -151,6 +163,12 @@ exports.HeroSection = {
             ref: 'InfoCard',
             many: true,
         },
+        showSocial: { type: Checkbox },
+        usingSocialMedia: {
+            type: Relationship,
+            ref: 'SocialElement',
+            many: true,
+        }
     },
     adminConfig: {
         defaultPageSize: 20,

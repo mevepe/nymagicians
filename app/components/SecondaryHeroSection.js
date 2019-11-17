@@ -36,10 +36,10 @@ export default function SecondaryHeroSection() {
   const { allHeroSections } = data
 
   return (
-    <section>
+    <section className="secondary-hero-section">
       {
         allHeroSections.map((section, index) => (
-        <div key={index} className="primary-hero-section-wrap">
+        <div key={index} className="wrap">
             <h2>{section.title}</h2>
             <Button buttonText={section.buttonText} buttonUrl={section.buttonLink} isGhost={true} />
         </div>

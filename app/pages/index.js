@@ -10,16 +10,28 @@ import PrimaryHeroSection from '../components/PrimaryHeroSection'
 import SecondaryHeroSection from '../components/SecondaryHeroSection'
 import DefaultHeroSection from '../components/DefaultHeroSection'
 import MainInfoCardSection from '../components/MainInfoCardSection'
+import { useInView } from 'react-intersection-observer'
 
-const IndexPage = props => (
-  <App>
-    <Header />
-    <PrimaryHeroSection />
-    <MainInfoCardSection />
-    <SecondaryHeroSection />
-    <HeroCards />
-    <DefaultHeroSection />
-  </App>
-)
+function IndexPage(props) {
+  const [ref, inView, entry] = useInView({
+    /* Optional options */
+    threshold: 0.95,
+  })
+  
+  if (entry) {
+    console.log(inView)
+  }
+
+  return (
+    <App>
+      <Header />
+      <PrimaryHeroSection />
+      <MainInfoCardSection />
+      <SecondaryHeroSection />
+      <HeroCards />
+      <DefaultHeroSection />
+    </App>
+  )
+}
 
 export default withApollo(IndexPage)

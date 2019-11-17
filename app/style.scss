@@ -1,11 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
 $mq-grid: 1364px;
 
-$foreground-color: rgba(#F12626, 1.0);
-$primary-color: rgba(#ffffff, 1.0);
+$foreground-color: rgba(#ff1717, 1);
+$primary-color: rgba(#ffffff, 1);
 
-$open-sans-font: 'Open Sans', sans-serif;
+$open-sans-font: "Open Sans", sans-serif;
+
+.tstpurposeonly {
+  height: 50vh;
+}
 
 * {
   margin: 0;
@@ -18,25 +22,120 @@ body {
   font-family: $open-sans-font;
 }
 
-header {
+.wrap {
+  max-width: $mq-grid;
+  margin: auto;
+  height: 100%;
+}
+
+.header {
+  --text: #f4f4f4;
+  --text-inverse: #333;
+  --background: transparent;
+
   position: fixed;
+  z-index: 999;
+  height: 113px;
+
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    &__element:not(:first-of-type) {
+      padding-left: 14px;
+    }
+  }
+
+  width: 100%;
+
+  &__main-navigation {
+    $nav-elements-padding: 60px;
+
+    color: var(--text);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    &__nav-element {
+      --spacing: 0.5em;
+      text-decoration: none;
+      color: inherit;
+      display: inline-block;
+      //padding: calc(var(--spacing) / 2) var(--spacing);
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: var(--spacing);
+        right: var(--spacing);
+        height: 2px;
+        background: currentColor;
+        transform: scaleX(0);
+        transition: transform 150ms ease-in-out;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+
+      .currently-active &::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &__nav-element:not(:first-of-type) {
+      margin-left: $nav-elements-padding;
+    }
+
+    &__nav-element > a {
+      color: $primary-color;
+    }
+
+    &__menu-button {
+      margin-left: $nav-elements-padding;
+    }
+  }
+}
+
+.social-media {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: auto;
+
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+
+  &__element {
+    padding-bottom: 21px;
+
+    &:not(:first-of-type) {
+      padding-left: 82px;
+    }
+  }
 }
 
 .primary-hero-section {
+  position: relative;
+
   background-color: $foreground-color;
   color: $primary-color;
 
   height: 100vh;
 
   .wrap {
-    max-width: $mq-grid;
-    margin: auto;
-
-    height: 100%;
-
     display: flex;
     justify-content: space-between;
+
+    height: 100%;
 
     .layout-column {
       display: flex;
@@ -69,7 +168,7 @@ header {
       border-left: 4px solid $primary-color;
       height: 100%;
       left: 0;
-      transform: scaleY(0.80);
+      transform: scaleY(0.8);
     }
   }
 
@@ -94,6 +193,5 @@ header {
   align-self: baseline;
 
   .ghost {
-
   }
 }

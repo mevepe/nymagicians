@@ -4,6 +4,7 @@ import gql from 'graphql-tag'
 import ErrorMessage from './ErrorMessage'
 import { Html } from '../primitives/Html';
 import Button from '../primitives/Button';
+import SocialMedia from './SocialMedia';
 
 export const PRIMARY_HERO_SECTION_QUERY = gql`
 query primaryHeroSection {
@@ -22,6 +23,14 @@ query primaryHeroSection {
     usingInfoCards {
       title
       value
+    }
+    showSocial
+    usingSocialMedia {
+      title
+      url
+      image {
+        publicUrl
+      }
     }
   }
 }
@@ -44,20 +53,20 @@ export default function PrimaryHeroSection() {
   const { allHeroSections } = data
 
   return (
-    <section className="primary-hero-section">
-      {
-        allHeroSections.map((section, index) => (
-          <div key={index} className="wrap">
-            <div class="layout-column">
-              <h2 className="primary-hero-section__title">{section.title}</h2>
-              <Html markup={section.introText} className="primary-hero-section__intro-text" />
-              <Button buttonText={section.buttonText} buttonUrl={section.buttonLink} isGhost={true} />
-            </div>
-            <div className="layout-column">
-              <img src={section.image.publicUrl} className="primary-hero-section__image" />
-            </div>
+    allHeroSections.map((section, index) => (
+      <section key={index} className="primary-hero-section">
+        <div className="wrap">
+          <div className="layout-column">
+            <h2 className="primary-hero-section__title">{section.title}</h2>
+            <Html markup={section.introText} className="primary-hero-section__intro-text" />
+            <Button buttonText={section.buttonText} buttonUrl={section.buttonLink} isGhost={true} />
           </div>
-        ))}
-    </section>
+          <div className="layout-column">
+            <img src={section.image.publicUrl} className="primary-hero-section__image" />
+          </div>
+        </div>
+        <SocialMedia socialMediaQuery={section.usingSocialMedia} />
+      </section>
+    ))
   )
 }

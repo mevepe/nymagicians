@@ -7,7 +7,7 @@ const { MongooseAdapter: Adapter } = require('@keystonejs/adapter-mongoose');
 
 const { staticRoute, staticPath, distDir } = require('./config.js');
 const { User, Product, StoreCategory, NavigationElement, HeroSection, InfoCardSection, HeroCard,
-  Todo, Post, UnsplashPicture, InfoCard} = require('./schema');
+  Todo, Post, UnsplashPicture, InfoCard, SocialElement } = require('./schema');
 
 const mongooseConnectionString = "mongodb+srv://mevepe:4a4a4a4a@heh-wckl0.gcp.mongodb.net/tryme?retryWrites=true&w=majority";
 
@@ -32,6 +32,7 @@ keystone.createList('Post', Post);
 keystone.createList('InfoCard', InfoCard);
 keystone.createList('UnsplashPicture', UnsplashPicture);
 keystone.createList('InfoCardSection', InfoCardSection);
+keystone.createList('SocialElement', SocialElement);
 
 const adminApp = new AdminUIApp({
   adminPath: '/admin',

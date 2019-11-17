@@ -38,9 +38,9 @@ export default function MainInfoCardSection() {
   const { allInfoCardSections } = data
 
   return (
-    <section>
+    <section className="info-card-section">
       {allInfoCardSections.map((section, index) => (
-        <div key={index} className="info-card-section-wrap">
+        <div key={index} className="wrap">
           {section.usingInfoCards.map((card, cardIndex) => (
             <InfoCard
               key={cardIndex}

@@ -47,9 +47,9 @@ export default function DefaultHeroSection() {
     const { allHeroSections } = data
 
     return (
-        <section>
+        <section className="last-hero-section">
             {allHeroSections.map((section, index) => (
-                <div key={index} className="primary-hero-section-wrap">
+                <div key={index} className="wrap">
                     <h2>{section.title}</h2>
                     <Html markup={section.introText} className="hero-card-body" />
                     <Button buttonText={section.buttonText} buttonUrl={section.buttonLink} isGhost={true} />
