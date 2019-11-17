@@ -39,10 +39,14 @@ export default function SecondaryHeroSection() {
     <section className="secondary-hero-section">
       {
         allHeroSections.map((section, index) => (
-        <div key={index} className="wrap">
-            <h2>{section.title}</h2>
-            <Button buttonText={section.buttonText} buttonUrl={section.buttonLink} isGhost={true} />
-        </div>
+          <div key={index} className="wrap">
+            <div className="layout-row">
+              <h2 className="title">{section.title}</h2>
+            </div>
+            <div className="layout-row">
+              <Button buttonText={section.buttonText} buttonUrl={section.buttonLink} isGhost={false} />
+            </div>
+          </div>
         ))}
     </section>
   )

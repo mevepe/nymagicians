@@ -40,13 +40,17 @@ export default function HeroCards() {
     <section className="hero-cards-section">
       <div className="wrap">
         {allHeroCards.map((card, index) => (
-          <div key={index} className="hero-card-wrap">
-            <img src={card.image.publicUrl} className="hero-card__image" />
-            <h2 className="hero-card__title">{card.title}</h2>
-            <Html markup={card.body} className="hero-card-body" />
+          <div key={index} className="hero-card" type={card.cardType}>
+            <div className="layout-column image">
+              <img src={card.image.publicUrl} className="hero-card__image" />
+            </div>
+            <div className="layout-column title">
+              <h2 className="hero-card__title">{card.title}</h2>
+            </div>
+            <Html markup={card.body} className="layout-column content hero-card-body" />
           </div>
         ))}
       </div>
-    </section>
+    </section >
   )
 }

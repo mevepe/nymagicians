@@ -13,6 +13,8 @@ query primaryHeroSection {
     title
     slug
     introText
+    buttonText
+    buttonLink
     image {
       filename
       publicUrl
@@ -31,38 +33,42 @@ query primaryHeroSection {
 `
 
 export default function DefaultHeroSection() {
-    const { loading, error, data, fetchMore, networkStatus } = useQuery(
-        DEFAULT_HERO_SECTION_QUERY,
-        {
-            // Setting this value to true will make the component rerender when
-            // the "networkStatus" changes, so we are able to know if it is fetching
-            // more data
-            notifyOnNetworkStatusChange: true
-        }
-    )
+  const { loading, error, data, fetchMore, networkStatus } = useQuery(
+    DEFAULT_HERO_SECTION_QUERY,
+    {
+      // Setting this value to true will make the component rerender when
+      // the "networkStatus" changes, so we are able to know if it is fetching
+      // more data
+      notifyOnNetworkStatusChange: true
+    }
+  )
 
-    if (error) return <ErrorMessage message='Error loading posts.' />
-    if (loading) return <div>Loading</div>
+  if (error) return <ErrorMessage message='Error loading posts.' />
+  if (loading) return <div>Loading</div>
 
-    const { allHeroSections } = data
+  const { allHeroSections } = data
 
-    return (
-        <section className="last-hero-section">
-            {allHeroSections.map((section, index) => (
-                <div key={index} className="wrap">
-                    <h2>{section.title}</h2>
-                    <Html markup={section.introText} className="hero-card-body" />
-                    <Button buttonText={section.buttonText} buttonUrl={section.buttonLink} isGhost={true} />
-                    {section.usingInfoCards.map((card, cardIndex) => (
-                        <InfoCard
-                            key={cardIndex}
-                            value={card.value}
-                            imageSrc={card.image.publicUrl}
-                            body={card.body}
-                        />
-                    ))}
-                </div>
+  return (
+    <section className="last-hero-section">
+      {allHeroSections.map((section, index) => (
+        <div key={index} className="wrap">
+          <div className="layout-column">
+            <h2 className="title">{section.title}</h2>
+            <Html markup={section.introText} className="content" />
+            <Button buttonText={section.buttonText} buttonUrl={section.buttonLink} isGhost={true} />
+          </div>
+          <div className="layout-column">
+            {section.usingInfoCards.map((card, cardIndex) => (
+              <InfoCard
+                key={cardIndex}
+                value={card.value}
+                imageSrc={card.image.publicUrl}
+                body={card.body}
+              />
             ))}
-        </section>
-    )
+          </div>
+        </div>
+      ))}
+    </section>
+  )
 }
