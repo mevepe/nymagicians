@@ -15,17 +15,13 @@ import { useInView } from 'react-intersection-observer'
 function IndexPage(props) {
   const [ref, inView, entry] = useInView({
     /* Optional options */
-    threshold: 0.95,
+    threshold: 0.9,
   })
-  
-  if (entry) {
-    console.log(inView)
-  }
 
   return (
     <App>
-      <Header />
-      <PrimaryHeroSection />
+      <Header scrolled={inView} />
+      <PrimaryHeroSection ref={ref} />
       <MainInfoCardSection />
       <SecondaryHeroSection />
       <HeroCards />

@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import React, { useState } from 'react';
+import React, { useRef } from 'react'
+import { useInView } from 'react-intersection-observer'
 import { withRouter } from 'next/router'
 import { useQuery } from '@apollo/react-hooks'
 import { NetworkStatus } from 'apollo-client'
@@ -20,7 +21,8 @@ export const ALL_NAV_ELEMENTS_QUERY = gql`
   }
 `
 
-export function Header({ router: { pathname } }) {
+export function Header({ router: { pathname }, scrolled }) {
+
   const { loading, error, data, fetchMore, networkStatus } = useQuery(
     ALL_NAV_ELEMENTS_QUERY,
     {
@@ -34,27 +36,29 @@ export function Header({ router: { pathname } }) {
   if (error) return <ErrorMessage message='Error loading navigation.' />
   if (loading) return <div>Loading</div>
 
+  console.log(scrolled);
+
   const { allNavigationElements, _allNavigationElementsMeta } = data
 
   return (
-    <header className="header">
+    <header className={`header ${!scrolled ? "nav-scrolled" : ""}`}>
       <div className="wrap">
         <Link href="/">
           <div className="header__logo">
-            <img src="/static/logo.png" alt="logo" className="header__logo__element" />
-            <img src="/static/NYmagicians.png" alt="logo" className="header__logo__element" />
+            <img src={`/static/${!scrolled ? "logo-inverse.png" : "logo.png"}`} alt="logo" className="header__logo__element" />
+            <img src={`/static/${!scrolled ? "NYmagicians-inverse.png" : "NYmagicians.png"}`} alt="logo" className="header__logo__element" />
           </div>
         </Link>
-        <nav className="header__main-navigation">
+        <nav className="nav__list">
           {allNavigationElements.map((element, index) => (
-            <div key={index} className="header__main-navigation__nav-element">
+            <div key={index} className="nav__link">
               <Link href={element.url}>
                 <a className={pathname === element.url ? 'currently-active' : ''}>{element.title}</a>
               </Link>
             </div>
           ))}
           <Link href="/about">
-            <img src="/static/menu.png" alt="image" className="header__main-navigation__menu-button" />
+            <img src="/static/menu.png" alt="image" className="nav__menu" />
           </Link>
         </nav>
       </div>

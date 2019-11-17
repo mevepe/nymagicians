@@ -7,6 +7,8 @@ $primary-color: rgba(#ffffff, 1);
 
 $open-sans-font: "Open Sans", sans-serif;
 
+$font-large: 70px/80px sans-serif;
+
 .tstpurposeonly {
   height: 50vh;
 }
@@ -29,13 +31,13 @@ body {
 }
 
 .header {
-  --text: #f4f4f4;
-  --text-inverse: #333;
-  --background: transparent;
-
   position: fixed;
   z-index: 999;
   height: 113px;
+
+  color: var(--text);
+
+  background-color: var(--background);
 
   .wrap {
     display: flex;
@@ -44,6 +46,8 @@ body {
   }
 
   &__logo {
+    display: flex;
+    align-items: center;
     &__element:not(:first-of-type) {
       padding-left: 14px;
     }
@@ -147,10 +151,8 @@ body {
   }
 
   &__title {
-    font-size: 80px;
-    font-weight: 700;
+    font: $font-large;
     max-width: 584px;
-    line-height: 109px;
     margin-bottom: 30px;
   }
 
@@ -335,7 +337,7 @@ body {
   padding: 200px 0;
 
   .title {
-    font-size: 80px;
+    font: $font-large;
     margin-bottom: 30px;
   }
 
@@ -343,7 +345,7 @@ body {
     font-size: 20px;
     margin-bottom: 30px;
   }
-  
+
   .wrap {
     display: flex;
     justify-content: space-between;
@@ -356,4 +358,90 @@ body {
       justify-content: center;
     }
   }
+}
+
+header {
+  --text: #ffffff;
+  --text-inverse: #333;
+  --background: transparent;
+
+  transition: background 250ms ease-in;
+  background: var(--background);
+  color: var(--text);
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav__link {
+  --spacing: 1em;
+  text-decoration: none;
+  display: inline-block;
+  padding: calc(var(--spacing) / 2) var(--spacing);
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+
+  & > a {
+    color: inherit;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: var(--spacing);
+    right: var(--spacing);
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transition: transform 150ms ease-in-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  &--btn {
+    border: 1.5px solid currentColor;
+    border-radius: 2em;
+    margin-left: 1em;
+    transition: background 250ms ease-in-out;
+    letter-spacing: 1px;
+    padding: 0.75em 1.5em;
+
+    &:hover {
+      background: var(--text);
+      color: var(--text-inverse);
+      border-color: var(--text);
+    }
+
+    &::after {
+      display: none;
+    }
+
+    &--highlight {
+      background: limegreen;
+      border-color: limegreen;
+      color: #333;
+
+      &:hover {
+        background: var(--text);
+        border-color: var(--text);
+      }
+    }
+  }
+}
+
+.nav-scrolled {
+  --text: #333;
+  --text-inverse: #ffffff;
+  --background: #ffffff;
+
+  box-shadow: 0 3px 20px rgba(black, 0.2);
 }

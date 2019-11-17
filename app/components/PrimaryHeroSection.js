@@ -36,7 +36,7 @@ query primaryHeroSection {
 }
 `
 
-export default function PrimaryHeroSection() {
+const PrimaryHeroSection = React.forwardRef((props, ref) => {
   const { loading, error, data, fetchMore, networkStatus } = useQuery(
     PRIMARY_HERO_SECTION_QUERY,
     {
@@ -54,7 +54,7 @@ export default function PrimaryHeroSection() {
 
   return (
     allHeroSections.map((section, index) => (
-      <section key={index} className="primary-hero-section">
+      <section ref={ref} key={index} className="primary-hero-section">
         <div className="wrap">
           <div className="layout-column">
             <h2 className="primary-hero-section__title">{section.title}</h2>
@@ -69,4 +69,6 @@ export default function PrimaryHeroSection() {
       </section>
     ))
   )
-}
+});
+
+export default PrimaryHeroSection;
