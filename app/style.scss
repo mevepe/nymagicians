@@ -197,6 +197,12 @@ body {
   }
 }
 
+.social-media {
+  .wrap {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  }
+}
+
 .hero-button {
   font-size: 20px;
   line-height: 27px;
