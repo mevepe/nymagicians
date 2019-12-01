@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 import { Html } from '../primitives/Html'
+import ErrorMessage from './ErrorMessage'
 import "../style.scss"
 
 export const ALL_STORE_DATA = gql`
