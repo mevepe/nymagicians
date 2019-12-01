@@ -18,7 +18,8 @@ query allStoreData {
         id
         filename
         publicUrl
-      }
+	  }
+	  price
     }
   }
 }
@@ -43,22 +44,32 @@ export default function ProductsArchive() {
 
 	return (
 		<section className="store-section">
-			<div className="wrap">
-				{allStoreCategories.map((category, index) => (
-					category.products.map((card, index) => (
-						<div key={index} className="hero-card">
-							<div className="layout-column image">
-								{card.image &&
-									<img src={card.image.publicUrl} className="hero-card__image" />}
-							</div>
-							<div className="layout-column title">
-								<h2 className="hero-card__title">{card.title}</h2>
-							</div>
-							<Html markup={card.body} className="layout-column content hero-card-body" />
+			{allStoreCategories.map((category, index) => (
+				<div className="category">
+					<div className="category__title">
+						<div className="wrap">
+							<h3>{category.name}</h3>
 						</div>
-					))
-				))}
-			</div>
+					</div>
+					<div className="wrap">
+						{category.products.map((card, index) => (
+							<div key={index} className="hero-card">
+								<div className="layout-column image">
+									{card.image &&
+										<img src={card.image.publicUrl} className="hero-card__image" />}
+								</div>
+								<div className="layout-column title">
+									<h2 className="hero-card__title">{card.title}</h2>
+								</div>
+								<Html markup={card.body} className="layout-column content hero-card-body" />
+								<div className="layout-column price">
+									<div className="hero-card__price">{card.price + " ₽"}</div>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			))}
 		</section >
 	)
 }
