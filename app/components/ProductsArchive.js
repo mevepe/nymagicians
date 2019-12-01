@@ -45,7 +45,7 @@ export default function ProductsArchive() {
 	return (
 		<section className="store-section">
 			{allStoreCategories.map((category, index) => (
-				<div className="category">
+				<div key={index} className="category">
 					<div className="category__title">
 						<div className="wrap">
 							<h3>{category.name}</h3>
