@@ -2,6 +2,7 @@ const {
     File,
     Text,
     Integer,
+    Float,
     Slug,
     Relationship,
     Select,
@@ -92,6 +93,7 @@ exports.Product = {
         body: { type: Wysiwyg },
         posted: { type: DateTime, format: 'DD/MM/YYYY' },
         image: { type: File, adapter: fileAdapter },
+        price: { type: Float },
     },
     adminConfig: {
         defaultPageSize: 20,
