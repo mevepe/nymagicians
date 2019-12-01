@@ -130,6 +130,7 @@ function createApolloClient (initialState = {}) {
     link: new HttpLink({
       uri: 'http://localhost:3000/admin/api', // Server URL (must be absolute)
       credentials: 'include', // Additional fetch() options like `credentials` or `headers`
+      headers: 'include',
       fetch
     }),
     cache: new InMemoryCache().restore(initialState)
