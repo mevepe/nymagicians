@@ -470,6 +470,10 @@ header {
   box-shadow: 0 3px 20px rgba(black, 0.2);
 }
 
+.store-section {
+  padding-top: 113px;
+}
+
 @media screen and (max-width: $mq-wide) {
   .wrap {
     max-width: 100%;

@@ -42,7 +42,7 @@ export default function ProductsArchive() {
 	const { allStoreCategories, _allStoreCategoriesMeta } = data
 
 	return (
-		<section className="hero-cards-section">
+		<section className="store-section">
 			<div className="wrap">
 				{allStoreCategories.map((category, index) => (
 					category.products.map((card, index) => (
