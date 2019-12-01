@@ -14,6 +14,9 @@ const mongooseConnectionString = "mongodb+srv://mevepe:4a4a4a4a@heh-wckl0.gcp.mo
 const keystone = new Keystone({
   name: "neverwantedtonode",
   adapter: new Adapter({ mongoUri: mongooseConnectionString }),
+  
+  cookieSecret: 'b14a354d08dbb8d0794b7564ad3821a020db5417c5cefb5635059e44d0eeb1f1',
+  secureCookies: false,
 });
 
 const authStrategy = keystone.createAuthStrategy({

@@ -13,31 +13,25 @@ const {
     Unsplash,
 } = require('@keystonejs/fields');
 
+const { IframelyOEmbedAdapter } = require('@keystonejs/oembed-adapters');
+
 const { Wysiwyg } = require('@keystonejs/fields-wysiwyg-tinymce');
 const { LocalFileAdapter } = require('@keystonejs/file-adapters');
 const getYear = require('date-fns/get_year');
 
-const { staticRoute, staticPath, distDir } = require('./config.js');
+const { staticRoute, staticPath, distDir } = require('./config');
 const dev = process.env.NODE_ENV !== 'production';
 
-let iframelyAdapter;
-
-if (process.env.IFRAMELY_API_KEY) {
-    const { IframelyOEmbedAdapter } = require('@keystonejs/oembed-adapters');
-    iframelyAdapter = new IframelyOEmbedAdapter({
-        apiKey: process.env.IFRAMELY_API_KEY,
-    });
-}
+let iframelyAdapter = new IframelyOEmbedAdapter({
+    apiKey: "66a1699a4c743d79e34702",
+});
 
 const fileAdapter = new LocalFileAdapter({
     src: `${dev ? 'app/' : `${distDir}/`}${staticPath}/uploads`,
     path: `/uploads`,
 });
 
-const avatarFileAdapter = new LocalFileAdapter({
-    src: `${staticPath}/avatars`,
-    path: `${staticRoute}/avatars`,
-});
+console.log(fileAdapter);
 
 // Access control functions
 const userIsAdmin = ({ authentication: { item: user } }) => Boolean(user && user.isAdmin);
@@ -87,7 +81,7 @@ exports.Product = {
         },
         categories: {
             type: Relationship,
-            ref: 'StoreCategory',
+            ref: 'StoreCategory.products',
             many: true,
         },
         status: {
@@ -111,6 +105,7 @@ exports.StoreCategory = {
     fields: {
         name: { type: Text },
         slug: { type: Slug, from: 'name' },
+        products: { type: Relationship, ref: 'Product.categories', many: true },
     },
     labelResolver: item => item.name,
 };
